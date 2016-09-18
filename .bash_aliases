@@ -18,7 +18,10 @@ function open {
 		nohup xdg-open "$arg" &> /dev/null &
 	done
 }
-alias hgit='git --git-dir=$HOME/.home.git --work-tree=$HOME'
+# To setup home repo:
+# git clone --bare <repo>
+# git --git-dir=$HOME/.home.git --work-tree=$HOME checkout
+alias hgit='git --git-dir=$HOME/.home.git --work-tree=$HOME' # git clone --bare <repo>
 alias matlab="matlab -nodesktop -nosplash -nodisplay -nojvm"
 alias ssh='ssh -X'
 alias cims='fmoody@access.cims.nyu.edu'

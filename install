@@ -1,0 +1,9 @@
+#!/bin/sh
+
+FILES=$(git ls-tree --name-only HEAD)
+
+for file in $FILES; do
+	if [ "$file" != "install" ]; then
+		ln -isTv "$file" ~/"$file"
+	fi
+done

@@ -1,0 +1,117 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{mypackage}
+\RequirePackage{amsmath,amssymb}
+
+% General
+\newcommand{\qed}{\hfill\blacksquare}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\eps}{\epsilon}
+\newcommand{\op}[1]{\operatorname{#1}}
+%\newcommand{\la}{\langle} To replace: s:\la\(.*\)\ra:\an{\1}:g
+%\newcommand{\ra}{\rangle}
+\newcommand{\an}[1]{\langle #1 \rangle}
+\newcommand{\flr}[1]{\lfloor #1 \rfloor}
+\newcommand{\ceil}[1]{\lceil #1 \rceil}
+\newcommand{\lt}{<} % Needed due to faulty highlighting
+\newcommand{\ol}{\overline}
+\newcommand{\ul}{\underline}
+\newcommand{\st}{\text{ such that }}
+\newcommand{\pwise}[1]{\begin{cases}#1\end{cases}}
+\newcommand{\otherwise}{\text{otherwise}}
+\renewcommand{\Re}{\operatorname{Re}}
+\renewcommand{\Im}{\operatorname{Im}}
+
+% Set theory
+\newcommand{\im}{\operatorname{im}}
+\newcommand{\range}{\operatorname{range}}
+\newcommand{\nin}{\not\in}
+\newcommand{\End}{\operatorname{End}}
+\newcommand{\id}{\operatorname{id}}
+
+% Linear algebra
+\newcommand{\vspan}{\operatorname{span}}
+\newcommand{\rank}{\operatorname{rank}}
+\newcommand{\colrank}{\operatorname{colrank}}
+\newcommand{\rowrank}{\operatorname{rowrank}}
+\newcommand{\nullity}{\operatorname{nullity}}
+\newcommand{\colspace}{\operatorname{colspace}}
+\newcommand{\rowspace}{\operatorname{rowspace}}
+\newcommand{\rref}{\operatorname{rref}}
+\newcommand{\spec}{\operatorname{sp}}
+\newcommand{\proj}{\operatorname{proj}}
+\newcommand{\mat}[1]{\begin{bmatrix}#1\end{bmatrix}}
+\newcommand{\bmat}[1]{\begin{bmatrix}#1\end{bmatrix}}
+\newcommand{\pmat}[1]{\begin{pmatrix}#1\end{pmatrix}}
+\newcommand{\vmat}[1]{\begin{vmatrix}#1\end{vmatrix}}
+\newcommand{\amat}[2]{\left[\begin{array}{#1}#2\end{array}\right]}
+
+% Optimization
+\newcommand{\Cost}{\operatorname{Cost}}
+\DeclareMathOperator*{\argmax}{argmax}
+\DeclareMathOperator*{\argmin}{argmin}
+
+% Theory of computation
+\newcommand{\start}{\text{start}}
+\newcommand{\accept}{\text{accept}}
+\newcommand{\rip}{\text{rip}}
+\newcommand{\yields}{\Rightarrow}
+\newcommand{\derives}{\overset{*}{\Rightarrow}}
+\newcommand{\ds}{\$}
+\newcommand{\push}{\text{push}}
+\newcommand{\pop}{\text{pop}}
+\newcommand{\reject}{\text{reject}}
+
+
+% Pseudocode
+\newenvironment{code}{\begin{tabbing}\qquad\=\qquad\=\qquad\=\qquad\=\qquad\=
+\qquad\=\qquad\=\qquad\=\qquad\=\qquad\=\kill}{\end{tabbing}}
+\newcommand{\For}{\textbf{For }}
+\newcommand{\To}{\textbf{to }}
+\newcommand{\Downto}{\textbf{downto }}
+\newcommand{\If}{\textbf{If }}
+\newcommand{\Elseif}{\textbf{Else If}}
+\newcommand{\Else}{\textbf{Else }}
+\newcommand{\While}{\textbf{While }}
+\newcommand{\Return}{\textbf{Return }}
+\newcommand{\Swap}{\textbf{Swap }}
+\newcommand{\NIL}{\mathrm{NIL}}
+\newcommand{\True}{\mathrm{TRUE}}
+\newcommand{\False}{\mathrm{FALSE}}
+
+% Pseudocode algorithms
+\newcommand{\algo}[1]{\textsc{#1}}
+\newcommand{\ExtractMax}{\textsc{ExtractMax}}
+\newcommand{\ExtractMin}{\textsc{ExtractMin}}
+\newcommand{\Insert}{\textsc{Insert}}
+\newcommand{\MakeSet}{\textsc{MakeSet}}
+\newcommand{\FindSet}{\textsc{FindSet}}
+\newcommand{\Union}{\textsc{Union}}
+\newcommand{\Parent}{\textsc{Parent}}
+\newcommand{\Left}{\textsc{Left}}
+\newcommand{\Right}{\textsc{Right}}
+\newcommand{\Heapify}{\textsc{Heapify}}
+\newcommand{\MaxHeapify}{\textsc{MaxHeapify}}
+\newcommand{\Delete}{\textsc{Delete}}
+\newcommand{\Lookup}{\textsc{Lookup}}
+
+% Pseudocode attributes
+\newcommand{\key}{\mathit{key}}
+\newcommand{\leftc}{\mathit{left}}
+\newcommand{\rightc}{\mathit{right}}
+\newcommand{\midc}{\mathit{mid}}
+\newcommand{\parent}{\mathit{parent}}
+\newcommand{\size}{\mathit{size}}
+\newcommand{\Color}{\mathit{color}}
+\newcommand{\white}{\mathit{white}}
+\newcommand{\gray}{\mathit{gray}}
+\newcommand{\red}{\mathit{red}}
+\newcommand{\blue}{\mathit{blue}}
+\newcommand{\black}{\mathit{black}}
+\newcommand{\Adj}{\mathit{Adj}}
+\newcommand{\Time}{\mathit{time}}
+\newcommand{\heapsize}{\mathit{heapsize}}
+\newcommand{\length}{\mathit{length}}

@@ -18,6 +18,7 @@ function open {
 		nohup xdg-open "$arg" &> /dev/null &
 	done
 }
+alias hgit='git --git-dir=$HOME/.home.git --work-tree=$HOME'
 alias matlab="matlab -nodesktop -nosplash -nodisplay -nojvm"
 alias ssh='ssh -X'
 alias cims='fmoody@access.cims.nyu.edu'

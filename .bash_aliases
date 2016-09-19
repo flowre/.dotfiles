@@ -23,7 +23,6 @@ function open {
 # git --git-dir=$HOME/.home.git --work-tree=$HOME checkout
 alias hgit='git --git-dir=$HOME/.home.git --work-tree=$HOME' # git clone --bare <repo>
 alias matlab="matlab -nodesktop -nosplash -nodisplay -nojvm"
-alias ssh='ssh -X'
 alias cims='fmoody@access.cims.nyu.edu'
 alias pyunit="python -m unittest"
 alias cprofile="python -m cProfile"

@@ -1,9 +1,8 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{mypackage}
-\RequirePackage{amsmath,amssymb}
+\RequirePackage{amsmath,amssymb,amsthm}
 
 % General
-\newcommand{\qed}{\hfill\blacksquare}
 \newcommand{\N}{\mathbb{N}}
 \newcommand{\Z}{\mathbb{Z}}
 \newcommand{\Q}{\mathbb{Q}}
@@ -24,6 +23,20 @@
 \newcommand{\otherwise}{\text{otherwise}}
 \renewcommand{\Re}{\operatorname{Re}}
 \renewcommand{\Im}{\operatorname{Im}}
+
+% Theorems
+\newtheorem{definition}{Definition}
+\newtheorem{theorem}{Theorem}
+\newtheorem{remark}{Remark}
+\newtheorem{question}{Question}
+\newtheorem{answer}{Answer}
+\newcommand{\defn}[2][]{\begin{definition}[#1]#2\end{definition}}
+\newcommand{\thm}[2][]{\begin{theorem}[#1]#2\end{theorem}}
+\newcommand{\prf}[1]{\begin{proof}#1\end{proof}}
+\newcommand{\rem}[1]{\begin{remark}#1\end{remark}}
+\newcommand{\que}[1]{\begin{question}#1\end{question}}
+\newcommand{\ans}[1]{\begin{answer}#1\end{answer}}
+%\newcommand{\qed}{\hfill\blacksquare}
 
 % Set theory
 \newcommand{\im}{\operatorname{im}}

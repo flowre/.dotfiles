@@ -81,3 +81,7 @@ fi
 
 # added by travis gem
 [ -f /home/felix/.travis/travis.sh ] && source /home/felix/.travis/travis.sh
+
+# Don't save history
+unset HISTFILE
+export LESSHISTFILE=/dev/null

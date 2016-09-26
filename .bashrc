@@ -26,3 +26,6 @@ export GOPATH="$HOME"
 
 # Travis
 [ -f /home/felix/.travis/travis.sh ] && source /home/felix/.travis/travis.sh
+
+# Tex
+export TEXMFHOME="$HOME/.texmf"

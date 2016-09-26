@@ -12,7 +12,6 @@ alias ls='ls -F'
 alias ll='ls -alF'
 alias la='ls -AF'
 alias ..='cd ..'
-alias .='open .'
 alias get="2>&1 xclip -selection c" # Pipe to clipboard
 alias put="xclip -selection clipboard -o" # Pipe from clipboard
 alias sudo='sudo ' # Allows aliases after sudo
@@ -27,9 +26,6 @@ function open {
 	fi
 }
 
-function goon {
-	echo $#
-}
 alias matlab="matlab -nodesktop -nosplash -nodisplay -nojvm"
 alias pyunit="python -m unittest"
 alias cprofile="python -m cProfile"

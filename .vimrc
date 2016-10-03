@@ -35,3 +35,11 @@ let $BASH_ENV = "~/.bash_aliases"
 
 " Treat txt files as markdown
 autocmd BufNewFile,BufReadPost *.txt set filetype=markdown
+
+" Commands
+nnoremap <C-j> :bn<CR>
+nnoremap <C-k> :bp<CR>
+nnoremap <C-c> :bd<CR>
+nnoremap <C-q> :q<CR>
+nnoremap <C-p> :e 
+nnoremap ; :

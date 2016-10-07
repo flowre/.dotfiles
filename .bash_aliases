@@ -19,6 +19,7 @@ alias matlab="matlab -nodesktop -nosplash -nodisplay -nojvm"
 alias pyunit="python -m unittest"
 alias cprofile="python -m cProfile"
 alias rsync="rsync -AaHvXz"
+alias conup="nmcli con up id"
 
 function open {
 	if [ "$#" -eq  0 ]; then

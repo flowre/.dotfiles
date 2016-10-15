@@ -29,7 +29,7 @@ function rsync {
 		fi
 		acc+=" ${arg}";
 	done
-	command rsync -AaHvXz ${acc}
+	command rsync -AaHPvXz ${acc}
 }
 
 function open {

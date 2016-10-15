@@ -18,8 +18,19 @@ alias put="xclip -o -selection clipboard"
 alias matlab="matlab -nodesktop -nosplash -nodisplay -nojvm"
 alias pyunit="python -m unittest"
 alias cprofile="python -m cProfile"
-alias rsync="rsync -AaHvXz"
 alias conup="nmcli con up id"
+
+# Fix how rsync treats args with trailing slash
+function rsync {
+	acc=""
+	for arg in "$@"; do
+		if [ $arg != "/" ]; then
+			arg="${arg%/}";
+		fi
+		acc+=" ${arg}";
+	done
+	command rsync -AaHvXz ${acc}
+}
 
 function open {
 	if [ "$#" -eq  0 ]; then

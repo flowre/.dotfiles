@@ -1,6 +1,6 @@
 % Pandoc latex template
 
-\documentclass[12]{article}
+\documentclass[11]{article}
 
 % Packages required by Pandoc
 \usepackage{amssymb,amsmath,ifxetex,ifluatex,eurosym,hyperref,ulem}
@@ -9,6 +9,9 @@
 $if(tables)$
 \usepackage{longtable,booktabs}
 $endif$
+
+% Page margins
+\usepackage[margin=1in]{geometry}
 
 % My package (See: ~/.texmf/tex/latex/mypackage/mypackage.sty)
 \usepackage{mypackage} % My custom package

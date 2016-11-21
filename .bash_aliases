@@ -15,29 +15,25 @@ alias ds='du -hs * | sort -hr'
 alias ..='cd ..'
 alias yank="xclip -selection clipboard"
 alias put="xclip -o -selection clipboard"
-alias matlab="matlab -nodesktop -nosplash -nodisplay -nojvm"
+alias matlab="(matlab -nodesktop -nosplash -nodisplay -nojvm)"
 alias pyunit="python -m unittest"
 alias cprofile="python -m cProfile"
 alias conup="nmcli con up id"
+alias backup="rsync -AaHvXz --partial-dir=.rsync-tmp --progress --exclude=.* "\
+"--exclude=private --exclude=downloads ~/* server:~"
 
-# Fix how rsync treats args with trailing slash
-function rsync {
-	acc=""
+function dispmd {
 	for arg in "$@"; do
-		if [ $arg != "/" ]; then
-			arg="${arg%/}";
-		fi
-		acc+=" ${arg}";
+		abs_fn=$(readlink -f "$arg");
+		hash=$(echo "$abs_fn" | shasum);
+		tmp_fn=/tmp/"${hash%%  -}".pdf;
+		pandoc "$arg" -o "$tmp_fn";
+		open "$tmp_fn";
 	done
-	command rsync -AaHPvXz ${acc}
 }
 
 function open {
-	if [ "$#" -eq  0 ]; then
-		open .;
-	else
-		for arg in "$@"; do
-			nohup xdg-open "$arg" &> /dev/null &
-		done
-	fi
+	for arg in "$@"; do
+		(xdg-open "$arg" &> /dev/null &)
+	done
 }

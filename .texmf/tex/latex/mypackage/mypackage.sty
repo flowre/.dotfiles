@@ -8,6 +8,7 @@
 \newcommand{\Q}{\mathbb{Q}}
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\C}{\mathbb{C}}
+\newcommand{\F}{\mathbb{F}}
 \newcommand{\eps}{\epsilon}
 \newcommand{\op}[1]{\operatorname{#1}}
 %\newcommand{\la}{\langle} To replace: s:\la\(.*\)\ra:\an{\1}:g
@@ -24,8 +25,17 @@
 \renewcommand{\Re}{\operatorname{Re}}
 \renewcommand{\Im}{\operatorname{Im}}
 
+% Fonts
+\renewcommand{\rm}{\textrm}
+\renewcommand{\bf}{\textbf}
+\renewcommand{\it}{\textit}
+\renewcommand{\tt}{\texttt}
+\renewcommand{\sc}{\textsc}
+
 % Arithmetic
 \newcommand{\longdiv}[1]{\overline{\smash{)}#1}}
+
+\newcommand{\aln}[1]{\begin{align*}#1\end{align*}}
 
 % Theorems
 \newtheorem{definition}{Definition}
@@ -65,8 +75,14 @@
 \newcommand{\vmat}[1]{\begin{vmatrix}#1\end{vmatrix}}
 \newcommand{\amat}[2]{\left[\begin{array}{#1}#2\end{array}\right]}
 
+% Calculus
+\newcommand{\pder}{\partial}
+
 % Number theory
 \newcommand{\lcm}{\operatorname{lcm}}
+
+% Probability
+\newcommand{\var}{\operatorname{Var}}
 
 % Optimization
 \newcommand{\Cost}{\operatorname{Cost}}

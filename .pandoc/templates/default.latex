@@ -1,6 +1,6 @@
 % Pandoc latex template
 
-\documentclass[11]{article}
+\documentclass[12]{article}
 
 % Packages required by Pandoc
 \usepackage{amssymb,amsmath,ifxetex,ifluatex,eurosym,hyperref,ulem}
@@ -15,6 +15,7 @@ $endif$
 
 % My package (See: ~/.texmf/tex/latex/mypackage/mypackage.sty)
 \usepackage{mypackage} % My custom package
+\usepackage{tipa}
 
 % hyperref settings
 \hypersetup{breaklinks=true,

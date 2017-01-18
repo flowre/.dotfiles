@@ -1,45 +1,28 @@
 " Vim text editor config file
 
-" Don't use vi compatible mode
 set nocompatible
-
-" Pathogen plugin manager
 execute pathogen#infect()
-
-" Recognize filetypes
-filetype plugin on
-
-" Enable syntax highlighting
-syntax on
-
-" Enable 256 colors
 set t_Co=256
-
-" Leader key to press before custom commands
-let mapleader = ','
-let maplocalleader = ','
-
-" Allow backspace and arrow keys to move across lines
-set whichwrap+=<,>
-set backspace=indent,eol,start
-
-" Enable automatic line wrapping
-set formatoptions+=wa
-
-" Sync vim's clipboard with system clipboard
-set clipboard=unnamed
-set clipboard=unnamedplus
-
-" Enable bash aliases
+filetype plugin on
+syntax on
 let $BASH_ENV = "~/.bash_aliases"
 
-" Treat txt files as markdown
-autocmd BufNewFile,BufReadPost *.txt set filetype=markdown
-
-" Commands
+set mouse=a
+map <ScrollWheelUp> 3<C-Y>
+map <S-ScrollWheelUp> <C-U>
+map <ScrollWheelDown> 3<C-E>
+map <S-ScrollWheelDown> <C-D>
 nnoremap <C-j> :bn<CR>
 nnoremap <C-k> :bp<CR>
 nnoremap <C-c> :bd<CR>
 nnoremap <C-q> :q<CR>
 nnoremap <C-p> :e 
 nnoremap ; :
+let mapleader = ','
+let maplocalleader = ','
+
+set whichwrap+=<,>,[,]
+set backspace=indent,eol,start
+set formatoptions+=wa
+set clipboard=unnamed
+set clipboard=unnamedplus

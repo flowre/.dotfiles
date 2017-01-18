@@ -8,10 +8,11 @@ case $- in
       *) return;;
 esac
 
+# Run private bashrc
+[ -f ~/.home-private ] && source ~/.home-private
+
 # Enable aliases
-if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
-fi
+[ -f ~/.bash_aliases ] && source ~/.bash_aliases
 
 # Don't save history
 unset HISTFILE

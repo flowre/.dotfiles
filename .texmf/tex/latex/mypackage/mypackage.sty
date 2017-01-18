@@ -1,8 +1,34 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{mypackage}
-\RequirePackage{amsmath,amssymb,amsthm}
+\RequirePackage{amsmath,amssymb,amsthm,tipa}
 
-% General
+% Fonts
+\renewcommand{\rm}{\textrm}
+\renewcommand{\bf}{\textbf}
+\renewcommand{\it}{\textit}
+\renewcommand{\tt}{\texttt}
+\renewcommand{\sc}{\textsc}
+\newcommand{\ol}{\overline}
+\newcommand{\ul}{\underline}
+
+% Theorems
+\newtheorem{definition}{Definition}
+\newtheorem{lemma}[definition]{Lemma}
+\newtheorem{theorem}[definition]{Theorem}
+\newtheorem{example}[definition]{Example}
+\newtheorem{remark}[definition]{Remark}
+\newtheorem{question}[definition]{Question}
+\newtheorem{answer}[definition]{Answer}
+\newcommand{\defn}[2][]{\begin{definition}[#1]#2\end{definition}}
+\newcommand{\lem}[2][]{\begin{lemma}[#1]#2\end{lemma}}
+\newcommand{\thm}[2][]{\begin{theorem}[#1]#2\end{theorem}}
+\newcommand{\prf}[1]{\begin{proof}#1\end{proof}}
+\newcommand{\ex}[1]{\begin{example}#1\end{example}}
+\newcommand{\rem}[1]{\begin{remark}#1\end{remark}}
+\newcommand{\que}[1]{\begin{question}#1\end{question}}
+\newcommand{\ans}[1]{\begin{answer}#1\end{answer}}
+
+% General math
 \newcommand{\N}{\mathbb{N}}
 \newcommand{\Z}{\mathbb{Z}}
 \newcommand{\Q}{\mathbb{Q}}
@@ -11,64 +37,34 @@
 \newcommand{\F}{\mathbb{F}}
 \newcommand{\eps}{\epsilon}
 \newcommand{\op}[1]{\operatorname{#1}}
-%\newcommand{\la}{\langle} To replace: s:\la\(.*\)\ra:\an{\1}:g
-%\newcommand{\ra}{\rangle}
-\newcommand{\an}[1]{\langle #1 \rangle}
-\newcommand{\flr}[1]{\lfloor #1 \rfloor}
-\newcommand{\ceil}[1]{\lceil #1 \rceil}
+\newcommand{\an}[1]{\langle#1\rangle}
+\newcommand{\flr}[1]{\lfloor#1\rfloor}
+\newcommand{\ceil}[1]{\lceil#1\rceil}
 \newcommand{\lt}{<} % Needed due to faulty highlighting
-\newcommand{\ol}{\overline}
-\newcommand{\ul}{\underline}
-\newcommand{\st}{\text{ such that }}
-\newcommand{\pwise}[1]{\begin{cases}#1\end{cases}}
-\newcommand{\otherwise}{\text{otherwise}}
 \renewcommand{\Re}{\operatorname{Re}}
 \renewcommand{\Im}{\operatorname{Im}}
-
-% Fonts
-\renewcommand{\rm}{\textrm}
-\renewcommand{\bf}{\textbf}
-\renewcommand{\it}{\textit}
-\renewcommand{\tt}{\texttt}
-\renewcommand{\sc}{\textsc}
-
-% Arithmetic
-\newcommand{\longdiv}[1]{\overline{\smash{)}#1}}
-
+\newcommand{\otherwise}{\text{otherwise}}
+\newcommand{\pwise}[1]{\begin{cases}#1\end{cases}}
 \newcommand{\aln}[1]{\begin{align*}#1\end{align*}}
-
-% Theorems
-\newtheorem{definition}{Definition}
-\newtheorem{theorem}{Theorem}
-\newtheorem{remark}{Remark}
-\newtheorem{question}{Question}
-\newtheorem{answer}{Answer}
-\newcommand{\defn}[2][]{\begin{definition}[#1]#2\end{definition}}
-\newcommand{\thm}[2][]{\begin{theorem}[#1]#2\end{theorem}}
-\newcommand{\prf}[1]{\begin{proof}#1\end{proof}}
-\newcommand{\rem}[1]{\begin{remark}#1\end{remark}}
-\newcommand{\que}[1]{\begin{question}#1\end{question}}
-\newcommand{\ans}[1]{\begin{answer}#1\end{answer}}
-%\newcommand{\qed}{\hfill\blacksquare}
-
-% Set theory
+\newcommand{\longdiv}[1]{\overline{\smash{)}#1}}
 \newcommand{\im}{\operatorname{im}}
 \newcommand{\range}{\operatorname{range}}
 \newcommand{\nin}{\not\in}
 \newcommand{\End}{\operatorname{End}}
 \newcommand{\id}{\operatorname{id}}
+\newcommand{\proj}{\operatorname{proj}}
 
 % Linear algebra
 \newcommand{\vspan}{\operatorname{span}}
 \newcommand{\rank}{\operatorname{rank}}
-\newcommand{\colrank}{\operatorname{colrank}}
-\newcommand{\rowrank}{\operatorname{rowrank}}
+\newcommand{\nullsp}{\operatorname{nullsp}}
 \newcommand{\nullity}{\operatorname{nullity}}
-\newcommand{\colspace}{\operatorname{colspace}}
-\newcommand{\rowspace}{\operatorname{rowspace}}
+\newcommand{\colsp}{\operatorname{colsp}}
+\newcommand{\colrank}{\operatorname{colrank}}
+\newcommand{\rowsp}{\operatorname{rowsp}}
+\newcommand{\rowrank}{\operatorname{rowrank}}
 \newcommand{\rref}{\operatorname{rref}}
 \newcommand{\spec}{\operatorname{sp}}
-\newcommand{\proj}{\operatorname{proj}}
 \newcommand{\mat}[1]{\begin{bmatrix}#1\end{bmatrix}}
 \newcommand{\bmat}[1]{\begin{bmatrix}#1\end{bmatrix}}
 \newcommand{\pmat}[1]{\begin{pmatrix}#1\end{pmatrix}}
@@ -80,6 +76,7 @@
 
 % Number theory
 \newcommand{\lcm}{\operatorname{lcm}}
+\newcommand{\jac}[2]{\left(\frac{#1}{#2}\right)}
 
 % Probability
 \newcommand{\var}{\operatorname{Var}}
@@ -99,7 +96,6 @@
 \newcommand{\push}{\text{push}}
 \newcommand{\pop}{\text{pop}}
 \newcommand{\reject}{\text{reject}}
-
 
 % Pseudocode
 \newenvironment{code}{\begin{tabbing}\qquad\=\qquad\=\qquad\=\qquad\=\qquad\=
@@ -150,3 +146,6 @@
 \newcommand{\Time}{\mathit{time}}
 \newcommand{\heapsize}{\mathit{heapsize}}
 \newcommand{\length}{\mathit{length}}
+
+% Linguistics
+\newcommand{\ipa}{\textipa}

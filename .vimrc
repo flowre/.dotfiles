@@ -3,9 +3,8 @@
 set nocompatible
 execute pathogen#infect()
 set t_Co=256
-filetype plugin on
+filetype plugin indent on
 syntax on
-let $BASH_ENV = "~/.bash_aliases"
 
 set mouse=a
 map <ScrollWheelUp> 3<C-Y>

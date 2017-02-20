@@ -1,6 +1,7 @@
-# ~/.bashrc: executed by bash(1) for non-login shells.
-# see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
-# for examples
+# Bash config file
+# To setup home dir repo:
+# git clone --bare <repo>
+# git --git-dir=$HOME/.home.git --work-tree=$HOME checkout
 
 # If not running interactively, don't do anything
 case $- in
@@ -8,18 +9,15 @@ case $- in
       *) return;;
 esac
 
-# Run private bashrc
-[ -f ~/.home-private ] && source ~/.home-private
-
-# Enable aliases
-[ -f ~/.bash_aliases ] && source ~/.bash_aliases
-
 # Don't save history
 unset HISTFILE
 export LESSHISTFILE=/dev/null
 
 # Keep the values of LINES and COLUMNS updated
 shopt -s checkwinsize
+
+# Set default editor
+export EDITOR=vim
 
 # Go
 export PATH="$PATH:/usr/local/go/bin"
@@ -30,3 +28,21 @@ export GOPATH="$HOME"
 
 # Tex
 export TEXMFHOME="$HOME/.texmf"
+
+# Aliases
+
+alias hgit='git --git-dir=$HOME/.home.git --work-tree=$HOME' # Don't delete
+
+alias ls='ls -F'
+alias ll='ls -AlF'
+alias la='ls -AF'
+alias ds='du -hs * | sort -hr'
+alias yank="xclip -selection clipboard"
+alias put="xclip -o -selection clipboard"
+alias backup="rsync -AaHvXz --delete --exclude=.* --exclude=downloads --partial-dir=.rsync-tmp --progress ~/* backup:$(hostname)/"
+#alias restore="rsync -AaHvXz --update --exclude=.* --exclude=downloads --partial-dir=.rsync-tmp --progress backup:$(hostname)/* ~"
+alias update="sudo ~/.home/install"
+alias startqemu="gui qemu-system-x86_64 --enable-kvm -m 4G"
+alias matlab="(matlab -nodesktop -nosplash -nodisplay -nojvm)"
+alias pyunit="python -m unittest"
+alias cprofile="python -m cProfile"
